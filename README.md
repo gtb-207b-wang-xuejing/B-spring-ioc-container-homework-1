@@ -12,6 +12,8 @@
 @Component 已经可以支持声明一个 bean 了，为何还要再弄个 @Bean 出来？
 答案请写在对应分支的 README.md 文件中
 
+Spring管理Bean是两个部分——注册Bean和装配Bean。@Component , @Repository , @ Controller , @Service , @Configration这些注解都是把要实例化的对象转化成一个Bean，放在IoC容器中，等你要用的时候，它会和上面的@Autowired , @Resource配合到一起，把对象、属性、方法组装。但是类似@Component , @Repository , @ Controller , @Service 这些注册Bean的注解存在局限性，只能局限作用于自己编写的类，如果第三方库中的组件装配到应用中，无法在类上增加@Component注解，所以不能够自动化配置（注册Bean和装配Bean）。
+
 ### Problem 2
 
 分支：p2-starts-from-here
